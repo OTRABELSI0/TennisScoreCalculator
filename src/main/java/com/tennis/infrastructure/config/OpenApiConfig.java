@@ -33,7 +33,7 @@ public class OpenApiConfig {
         Contact contact = new Contact();
         contact.setEmail("tennis@example.com");
         contact.setName("Tennis Team");
-        contact.setUrl("https://github.com/your-username/tennis-scoring-system");
+        contact.setUrl("https://github.com/OTRABELSI0/tennis-scoring-system");
 
         License mitLicense = new License().name("MIT License").url("https://choosealicense.com/licenses/mit/");
 
@@ -42,7 +42,7 @@ public class OpenApiConfig {
                 .version("1.0.0")
                 .contact(contact)
                 .description("A comprehensive tennis scoring system implementing standard tennis rules including deuce scenarios.")
-                .termsOfService("https://github.com/your-username/tennis-scoring-system")
+                .termsOfService("https://github.com/OTRABELSI0/tennis-scoring-system")
                 .license(mitLicense);
 
         return new OpenAPI().info(info).servers(List.of(devServer, prodServer));

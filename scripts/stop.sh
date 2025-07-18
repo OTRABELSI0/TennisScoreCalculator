@@ -1,5 +1,4 @@
 #!/bin/bash
-# scripts/stop.sh
 
 set -e
 

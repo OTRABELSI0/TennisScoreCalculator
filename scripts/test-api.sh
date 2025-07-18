@@ -1,5 +1,4 @@
 #!/bin/bash
-# scripts/test-api.sh
 
 set -e
 

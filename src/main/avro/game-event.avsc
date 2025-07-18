@@ -1,3 +1,82 @@
-curl -X POST http://localhost:8080/api/tennis/games \
--H "Content-Type: application/json" \
--d '{"ballSequence": "INVALID"}'
+{
+  "type": "record",
+  "name": "GameEvent",
+  "namespace": "com.tennis.avro",
+  "doc": "Event representing a tennis game action",
+  "fields": [
+    {
+      "name": "gameId",
+      "type": "string",
+      "doc": "Unique identifier for the game"
+    },
+    {
+      "name": "eventType",
+      "type": {
+        "type": "enum",
+        "name": "EventType",
+        "symbols": ["POINT_SCORED", "GAME_FINISHED"],
+        "doc": "Type of event that occurred"
+      },
+      "doc": "The type of event"
+    },
+    {
+      "name": "player",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Player who scored the point (null for game finished events)"
+    },
+    {
+      "name": "playerAScore",
+      "type": "int",
+      "doc": "Current score for Player A"
+    },
+    {
+      "name": "playerBScore",
+      "type": "int",
+      "doc": "Current score for Player B"
+    },
+    {
+      "name": "displayScore",
+      "type": "string",
+      "doc": "Human-readable score display"
+    },
+    {
+      "name": "isFinished",
+      "type": "boolean",
+      "doc": "Whether the game has finished"
+    },
+    {
+      "name": "winner",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Winner of the game (null if not finished)"
+    },
+    {
+      "name": "timestamp",
+      "type": "long",
+      "doc": "Event timestamp in milliseconds since epoch"
+    },
+    {
+      "name": "metadata",
+      "type": {
+        "type": "record",
+        "name": "EventMetadata",
+        "fields": [
+          {
+            "name": "version",
+            "type": "string",
+            "default": "1.0.0",
+            "doc": "Schema version"
+          },
+          {
+            "name": "source",
+            "type": "string",
+            "default": "tennis-scoring-system",
+            "doc": "Source system"
+          }
+        ]
+      },
+      "doc": "Event metadata"
+    }
+  ]
+}

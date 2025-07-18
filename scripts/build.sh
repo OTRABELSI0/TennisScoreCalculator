@@ -1,5 +1,4 @@
 #!/bin/bash
-# scripts/build.sh
 
 set -e
 
