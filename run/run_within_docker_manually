@@ -1,0 +1,14 @@
+# Build the application
+mvn clean package -DskipTests
+
+# Build Docker image
+docker build -t tennis-scoring-system:latest .
+
+# Run with Docker Compose
+docker-compose up -d
+
+# View logs
+docker-compose logs -f tennis-app
+
+# Stop services
+docker-compose down

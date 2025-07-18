@@ -1,0 +1,24 @@
+# Test the game
+curl -X POST http://localhost:8080/api/tennis/games \
+  -H "Content-Type: application/json" \
+  -d '{"ballSequence": "ABABAA"}'
+
+# Test rules endpoint
+curl http://localhost:8080/api/tennis/rules
+
+# Test stats endpoint
+curl http://localhost:8080/api/tennis/stats
+
+# Test health
+curl http://localhost:8080/actuator/health
+
+# Test metrics
+curl http://localhost:8080/actuator/metrics
+
+# Test specific metric
+curl http://localhost:8080/actuator/metrics/tennis.games.played
+
+# Test validation error
+curl -X POST http://localhost:8080/api/tennis/games \
+  -H "Content-Type: application/json" \
+  -d '{"ballSequence": "INVALID"}'

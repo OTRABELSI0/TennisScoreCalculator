@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: test
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+logging:
+  level:
+    com.tennis: DEBUG
+    org.springframework: WARN
+    org.mockito: WARN

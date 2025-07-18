@@ -1,0 +1,13 @@
+# .dockerignore
+.git
+.gitignore
+README.md
+Dockerfile
+.dockerignore
+target/
+!target/tennis-scoring-system-1.0.0.jar
+src/
+.mvn/
+mvnw
+mvnw.cmd
+pom.xml

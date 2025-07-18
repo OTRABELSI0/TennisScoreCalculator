@@ -1,0 +1,5 @@
+# Clean and build
+mvn clean package
+
+# Run the application
+mvn spring-boot:run
